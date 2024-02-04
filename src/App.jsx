@@ -1,19 +1,30 @@
 import "./App.scss";
-import { Routes, Route } from "react-router-dom";
-import Home from "./components/Home/Home.jsx";
-import Contact from "./components/Contact/Contact.jsx";
-import About from "./components/About/About.jsx";
-import Navbar from "./components/Navbar/Navbar.jsx";
+import { Navbar, Home, About, Contact, Projects, Skills } from "./components";
+import styles from './style.js'
 
 function App() {
   return (
-    <div>
-       <Navbar fixed="top" /> 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+    <div className="bg-black w-full overflow-hidden">
+      <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+        <div className={`${styles.boxWidth}`}>
+          <Navbar />
+        </div>
+      </div>
+
+      <div className={`bg-black ${styles.flexStart}`}>
+        <div className={`${styles.boxWidth}`}>
+          <Home />
+        </div>
+      </div>
+
+      <div className={`bg-black ${styles.paddingX} ${styles.flexCenter}`}>
+        <div className={`${styles.boxWidth}`}>
+          <Skills />
+          <Projects />
+          <About />
+          <Contact />
+        </div>
+      </div>
     </div>
   );
 }
